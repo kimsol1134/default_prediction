@@ -126,15 +126,15 @@ def main():
         with col1:
             company_name = st.text_input(
                 "기업명 또는 종목코드",
-                value="삼성전자",
+                value="금양",
                 help="예: 삼성전자, SK하이닉스, 005930"
             )
 
         with col2:
-            # 동적으로 회계연도 생성 (현재 년도부터 과거 5년)
+            # 동적으로 회계연도 생성 (전년도부터 과거 5년)
             from datetime import datetime
             current_year = datetime.now().year
-            year_options = [str(current_year - i) for i in range(6)]  # 2024, 2023, 2022, 2021, 2020, 2019
+            year_options = [str(current_year - 1 - i) for i in range(6)]  # 2024, 2023, 2022, 2021, 2020, 2019
 
             year = st.selectbox(
                 "회계연도",
@@ -490,7 +490,7 @@ def display_detailed_features(features_df: pd.DataFrame):
                 st.markdown(f"**{cat_name} 특성 ({len(cols)}개)**")
                 cat_df = features_df[cols].T
                 cat_df.columns = ['값']
-                st.dataframe(cat_df, width='stretch')
+                st.dataframe(cat_df, use_container_width=True)
 
 
 def display_financial_statements(financial_data: dict):
@@ -511,7 +511,7 @@ def display_financial_statements(financial_data: dict):
                 financial_data.get('자본총계', 0)
             ]
         }
-        st.dataframe(pd.DataFrame(bs_data), width='stretch')
+        st.dataframe(pd.DataFrame(bs_data), use_container_width=True)
 
         # 손익계산서
         st.markdown("### 손익계산서")
@@ -525,7 +525,7 @@ def display_financial_statements(financial_data: dict):
                 financial_data.get('당기순이익', 0)
             ]
         }
-        st.dataframe(pd.DataFrame(is_data), width='stretch')
+        st.dataframe(pd.DataFrame(is_data), use_container_width=True)
 
 
 def create_sample_data(sample_type: str) -> dict:
