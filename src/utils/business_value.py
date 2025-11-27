@@ -95,7 +95,7 @@ class BusinessValueCalculator:
             'roi': '931%',
             'payback_months': 1.3,
             'annual_savings_krw': '466M',
-            'precision': 0.0504,
-            'recall': 0.8684,
-            'f2_score': 0.2046
+            'precision': 0.052,  # 5.2%
+            'recall': 0.697,     # 69.7%
+            'f2_score': 0.200    # 0.200
         }
