@@ -44,9 +44,9 @@ PAGE_CONFIG = {
 # === 임계값 설정 ===
 # Part 3 노트북의 최적 임계값 (Recall 80% 기준)
 TRAFFIC_LIGHT_THRESHOLDS = {
-    'green': 0.0168,   # < 1.68%: Safe
-    'yellow': 0.0468,  # < 4.68%: Potential Risk
-    'red': 1.0         # >= 4.68%: High Risk
+    'green': 0.0331,   # < 3.31%: Safe
+    'yellow': 0.0940,  # < 9.40%: Potential Risk
+    'red': 1.0         # >= 9.40%: High Risk
 }
 
 # === 한글 폰트 설정 ===

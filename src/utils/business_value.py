@@ -92,10 +92,10 @@ class BusinessValueCalculator:
             모델 성능 메트릭
         """
         return {
-            'roi': '920%',
+            'roi': '931%',
             'payback_months': 1.3,
-            'annual_savings_krw': '460M',
-            'precision': 0.85,
-            'recall': 0.80,
-            'f2_score': 0.82
+            'annual_savings_krw': '466M',
+            'precision': 0.0504,
+            'recall': 0.8684,
+            'f2_score': 0.2046
         }
